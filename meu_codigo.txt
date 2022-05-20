@@ -1,0 +1,36 @@
+from random import randint
+from time import sleep
+ss = 0
+print('-----< Vamos jogar: Par ou Ímpar >-----')
+while True:
+    a = int(input('Digite um número:'))
+    s = randint(1, 10)
+    t = a + s
+    f = ' '
+    while f not in 'PI':
+        print('''Digite: [P] Par 
+        [I] Ímpar''')
+        f = str(input('Qual deseja:')).strip().upper()[0]
+        print('-'*49)
+    print(f'Processando...')
+    sleep(2.0)
+    print(f'Voçê digitou {a} e o computador digitou {s}.\n{a} + {s} = {t}.')
+    print(f'E {t} é Par.'if t % 2 == 0 else f'E {t} é Ímpar.')
+    if f == 'P':
+        if t % 2 == 0:
+            print('Voçê Venceu!')
+            ss += 1
+        else:
+            print('Voçê Perdeu!')
+            break
+    elif f == 'I':
+        if t % 2 == 0:
+            print('Voçê Venceu!')
+            ss += 1
+        else:
+            print('Voçê Perdeu!')
+            break
+    print('-'*49)
+    sleep(1.5)
+print(f'GAME OVER!\nVoçê venceu {ss} vezes.')
+print('-'*49)
